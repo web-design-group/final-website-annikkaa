@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Личный кабинет</title>
+    <link rel="stylesheet" href="css/style-lk.css">
+</head>
+<body>
+    <header class="header">
+    <div class="logo">
+        <img src= "img/logo.jpg">
+    </div>
+
+    <div class="search">
+        <input type="text" placeholder="Поиск...">
+    </div>
+    <div class="icons">
+          <a href="index.html" class="icon">
+            <img src="img/Home.png" alt="Главная"></a>
+          
+                  <a href="личный кабинет.html" class="icon">
+                    <img src="img/icon-invert-my-page.png" alt="Личный кабинет"></a>
+                
+                          <a href="корзина.html" class="icon">
+                           <img src="img/corzina.png" alt="Корзина"></a>
+    </div> 
+</header>
+    <main class="main">
+     <div class="container">
+        <div class="box small">
+            <img src="img/Rectangle101.jpg" class="ava">
+            <h2>АЛЕСКЕЙ МИХАЙЛОВ</h2>
+            <ul class="menu">
+                <li>ЗАКАЗЫ</li>
+                <li>ОПЛАТА</li>
+                <li>НАСТРОЙКИ</li>
+            </ul>
+        </div>
+    
+    <div class="box big">
+    <p>ВАШИ ЗАКАЗЫ</p>
+    <div class="container2">
+        <div class="box3">
+            <h2>ДОСТАВЛЕН</h2>
+            <img src="img/new-project (2).png" alt="">
+        </div>
+
+        <div class="box4">
+            <h2>СОБИРАЕТСЯ</h2>
+            <img src="img/new-project (3).png" alt="">
+        </div>
+
+        <div class="box5">
+            <h2>ПОЛУЧЕН</h2>
+            <img src="img/new-project.png" alt="">
+        </div>
+    </div>
+
+    <p>ВАШИ ОТЗЫВЫ</p>
+ <div class="conteiner3">
+    <div class="box6 card">
+        <h3 class="title" >COLOMBIA COFFEE</h3>
+        <h4 class="desc">Закупаем колумбийский кофе оптом для нашего кафе — качество всегда стабильное, зерна свежие, а клиенты остаются довольны вкусом.</h4>
+    </div>
+
+    <div class="box7 card">
+        <h3 class="title">BRAZIL COFFEE</h3>
+        <h4 class="desc">Закупаем этот кофе оптом уже несколько месяцев — вкус отличный, доставка своевременная, сотрудничество надёжное.</h4>
+    </div>
+
+    <div class="box8 card">
+        <h3 class="title">MATCHA TOPPING</h3>
+        <h4 class="desc">Приятно сладкий с ярким вкусом матчи, отлично подходит для кофе и десертов!</h4>
+    </div>
+ </div>
+</div>
+    </main>   
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="social">
+                <img src= "img/TelegramApp.png" class="iconfooter">
+                <img src= "img/WhatsApp.png" class="iconfooter">
+                <img src= "img/VKCircled.png" class="iconfooter">
+                <img src= "img/YouTubeSquared.png" class="iconfooter">
+            </div>
+
+            <div class="contact">
+                <p class="copy" onclick="openFeedback()">ОБРАТНАЯ СВЯЗЬ</p>
+                <a href="moko-team@yandx.ru">moko-team@yandx.ru</a>
+                <a href="+7 (972)654-34-23">+7 (972)654-34-23</a>
+            </div>
+        </div>
+</footer>
+    <div class="feedback-modal" id="feedbackModal">
+        <div class="feedback-content">
+            <h2>ОБРАТНАЯ СВЯЗЬ</h2>
+            <input type="text" placeholder="Ваше имя">
+            <input type="email" placeholder="Email">
+            <textarea placeholder="Ваше сообщение"></textarea>
+            <button class="send-btn" onclick="sendFeedback()">ОТПРАВИТЬ</button>
+        </div>
+    </div>
+<script>
+function openFeedback() {
+    document.getElementById("feedbackModal").classList.add("active");
+}
+
+function sendFeedback() {
+    document.getElementById("feedbackModal").classList.remove("active");
+}
+
+document.getElementById("feedbackModal").addEventListener("click", function(e) {
+    if (e.target === this) {
+        this.classList.remove("active");
+    }
+});
+</script>
+</body>
+</html>

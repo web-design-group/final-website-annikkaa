@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Корзина</title>
+    <link rel="stylesheet" href="css/style-korzina.css">
+</head>
+<body>
+    <header class="header">
+    <div class="logo">
+        <img src= "img/logo.jpg">
+    </div>
+
+    <div class="search">
+        <input type="text" placeholder="Поиск...">
+    </div>
+    <div class="icons">
+          <a href="index.html" class="icon">
+            <img src="img/Home.png" alt="Главная"></a>
+          
+                  <a href="личный кабинет.html" class="icon">
+                    <img src="img/icon-invert-my-page.png" alt="Личный кабинет"></a>
+                
+                          <a href="корзина.html" class="icon">
+                           <img src="img/corzina.png" alt="Корзина"></a>
+    </div> 
+</header>
+    <main class="main">
+    <h1>КОРЗИНА</h1>
+<div class="container">
+    <div class="box1">
+        <div class="product">
+            <img src="img/photo.jpg" class="img">
+            <div class="text">
+                <button class="cart-but" onclick="removeItem(this)">
+                    <img src="img/trash.png" alt="Удалить">
+                </button>
+                <h4>BRAZIL COFFEE</h4>
+                <p class="price">1200₽</p>
+
+                <div class="qty-box">
+                    <button class="qty-btn" onclick="changeQty(this, -1)">−</button>
+                    <span class="qty">1</span>
+                    <button class="qty-btn" onclick="changeQty(this, 1)">+</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="product">
+            <img src="img/photo — копия.jpg" class="img">
+            <div class="text">
+                <button class="cart-but" onclick="removeItem(this)">
+                    <img src="img/trash.png" alt="Удалить">
+                </button>
+                <h4>COLAMBIA COFFEE</h4>
+                <p class="price">1200₽</p>
+
+                <div class="qty-box">
+                    <button class="qty-btn" onclick="changeQty(this, -1)">−</button>
+                    <span class="qty">1</span>
+                    <button class="qty-btn" onclick="changeQty(this, 1)">+</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="box2">
+        <h2>ОПЛАТА</h2>
+
+        <h3>ВЫБЕРИТЕ СПОСОБ ОПЛАТЫ</h3>
+        <div class="pay-methods">
+            <button class="pay-btn">МИР **** 7655</button>
+            <button class="pay-btn">МИР **** 8976</button>
+        </div>
+
+        <h3>ДОСТАВКА</h3>
+        <div class="delivery">
+            <button class="del-btn">САМОВЫВОЗ</button>
+            <button class="del-btn">КУРЬЕР</button>
+        </div>
+
+        <h3>КОММЕНТАРИЙ</h3>
+        <textarea class="comment" placeholder="Введите комментарий..."></textarea>
+        <button class="order-btn">ЗАКАЗАТЬ</button>
+    </div>
+
+</div>
+<div class="success-modal" id="successModal">
+    <div class="success-content">
+        <h2>УСПЕШНО!</h2>
+        <p>Ваш заказ успешно оформлен.</p>
+        <button class="close-btn" onclick="closeSuccess()">ОК</button>
+    </div>
+</div>
+    </main>   
+<footer class="footer">
+    <div class="footer-content">
+        <div class="social">
+        <img src= "img/TelegramApp.png" class="iconfooter">
+        <img src= "img/WhatsApp.png" class="iconfooter">
+        <img src= "img/VKCircled.png" class="iconfooter">
+        <img src= "img/YouTubeSquared.png" class="iconfooter">
+        </div>
+
+        <div class="contact">
+           <p class="copy" onclick="openFeedback()">ОБРАТНАЯ СВЯЗЬ</p>
+           <a href="moko-team@yandx.ru">moko-team@yandx.ru</a>
+           <a href="+7 (972)654-34-23">+7 (972)654-34-23</a>
+        </div>
+
+    </div>
+</footer>
+<div class="feedback-modal" id="feedbackModal">
+    <div class="feedback-content">
+        <h2>ОБРАТНАЯ СВЯЗЬ</h2>
+        <input type="text" placeholder="Ваше имя">
+        <input type="email" placeholder="Email">
+        <textarea placeholder="Ваше сообщение"></textarea>
+        <button class="send-btn" onclick="sendFeedback()">ОТПРАВИТЬ</button>
+    </div>
+</div>
+<script>
+function removeItem(btn) {
+    const product = btn.closest(".product");
+    if (product) product.remove();
+}
+</script>
+
+<script>
+function changeQty(btn, delta) {
+    const box = btn.parentElement;
+    const qtyEl = box.querySelector(".qty");
+
+    let value = parseInt(qtyEl.textContent);
+    value += delta;
+
+    if (value < 1) value = 1;
+
+    qtyEl.textContent = value;
+}
+</script>
+
+<script>
+const payButtons = document.querySelectorAll('.pay-btn');
+payButtons.forEach(btn => {
+    btn.addEventListener('click', () => {
+        payButtons.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+    });
+});
+</script>
+
+<script>
+const delButtons = document.querySelectorAll('.del-btn');
+delButtons.forEach(btn => {
+    btn.addEventListener('click', () => {
+        delButtons.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+    });
+});
+</script>
+
+<script>
+function showSuccess() {
+    document.getElementById("successModal").classList.add("active");
+}
+
+function closeSuccess() {
+    document.getElementById("successModal").classList.remove("active");
+}
+
+document.querySelector(".order-btn").addEventListener("click", function () {
+    showSuccess();
+});
+</script>
+
+<script>
+function openFeedback() {
+    document.getElementById("feedbackModal").classList.add("active");
+}
+
+function sendFeedback() {
+    document.getElementById("feedbackModal").classList.remove("active");
+}
+
+document.getElementById("feedbackModal").addEventListener("click", function (e) {
+    if (e.target === this) {
+        this.classList.remove("active");
+    }
+});
+</script>
+</body>
+</html>

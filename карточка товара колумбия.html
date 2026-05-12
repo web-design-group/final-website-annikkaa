@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Карточка товара</title>
+    <link rel="stylesheet" href="css/style-kart — colombia.css">
+</head>
+<body>
+    <header class="header">
+    <div class="logo">
+        <img src= "img/logo.jpg">
+    </div>
+
+    <div class="search">
+        <input type="text" placeholder="Поиск...">
+    </div>
+    <div class="icons">
+          <a href="index.html" class="icon">
+            <img src="img/Home.png" alt="Главная"></a>
+          
+                  <a href="личный кабинет.html" class="icon">
+                    <img src="img/icon-invert-my-page.png" alt="Личный кабинет"></a>
+                
+                          <a href="корзина.html" class="icon">
+                           <img src="img/corzina.png" alt="Корзина"></a>
+    </div> 
+</header>
+    <main class="main">
+  <div class="container">
+    <img src="img/new-project (3).png" class="product">
+
+    <div class="box big">
+        <div class="top">
+            <h1>COLOMBIA COFFEE</h1>
+            <button class="fav" onclick="this.classList.toggle('active')">❤</button>
+        </div>
+
+        <div class="stars">
+            <img src="img/1041988.png">
+            <img src="img/1041988.png">
+            <img src="img/1041988.png">
+            <img src="img/1041988.png">
+            <img src="img/1041988.png">
+        </div>
+
+        <p>ВКУС</p>
+        <h3>КОЛУМБИЯ</h3>
+
+        <p>ОПИСАНИЕ</p>
+        <h3 class="desc">
+            МЯГКИЙ И СБАЛАНСИРОВАННЫЙ КОФЕ ИЗ КОЛУМБИИ С ЛЁГКОЙ КИСЛИНКОЙ И НОТКАМИ ШОКОЛАДА И ОРЕХОВ.
+        </h3>
+
+        <p>ЦЕНА</p>
+        <h3>1200₽</h3>
+
+        <p>СРОК ДОСТАВКИ</p>
+        <h3>ПОСЛЕЗАВТРА</h3>
+
+        <button class="order-btn">ЗАКАЗАТЬ</button>
+    </div>
+</div>
+<h1>ОТЗЫВЫ</h1>
+
+<div class="reviews">
+    <div class="review">
+        <div class="review-header">
+            <h4 class="review-name">Александр Михайлов</h4>
+
+            <div class="review-stars">
+                <img src="img/1041988.png">
+                <img src="img/1041988.png">
+                <img src="img/1041988.png">
+                <img src="img/1041988.png">
+                <img src="img/1041988.png">
+            </div>
+        </div>
+
+        <p class="review-text">
+           Очень приятный вкус без горечи, пьётся легко и с удовольствием. Подходит и для эспрессо, и для фильтра.
+        </p>
+    </div>
+
+    <div class="review">
+        <div class="review-header">
+            <h4 class="review-name">Владимир Марков</h4>
+
+            <div class="review-stars">
+                <img src="img/1041988.png">
+                <img src="img/1041988.png">
+                <img src="img/1041988.png">
+                <img src="img/1041988.png">
+                <img src="img/1041988.png">
+            </div>
+        </div>
+
+        <p class="review-text">
+          Чувствуются шоколадные нотки, очень мягкий вкус. Нет резкой кислотности.
+        </p>
+    </div>
+
+    <div class="review">
+        <div class="review-header">
+            <h4 class="review-name">Константин Иванов</h4>
+
+            <div class="review-stars">
+                <img src="img/1041988.png">
+                <img src="img/1041988.png">
+                <img src="img/1041988.png">
+                <img src="img/1041988.png">
+                <img src="img/1041988.png">
+            </div>
+        </div>
+
+        <p class="review-text">
+          Хорошо бодрит утром и не вызывает тяжести. Стал моим ежедневным выбором.
+        </p>
+    </div>
+
+    <div class="review">
+        <div class="review-header">
+            <h4 class="review-name">Валерия Казанцева</h4>
+
+            <div class="review-stars">
+                <img src="img/1041988.png">
+                <img src="img/1041988.png">
+                <img src="img/1041988.png">
+                <img src="img/1041988.png">
+                <img src="img/1041988.png">
+            </div>
+        </div>
+
+        <p class="review-text">
+            Классический вкус, который сложно чем-то испортить.
+            </p>
+    </div>
+</div>
+</div>
+</div>  
+    </main>   
+<footer class="footer">
+    <div class="footer-content">
+        <div class="social">
+        <img src= "img/TelegramApp.png" class="iconfooter">
+        <img src= "img/WhatsApp.png" class="iconfooter">
+        <img src= "img/VKCircled.png" class="iconfooter">
+        <img src= "img/YouTubeSquared.png" class="iconfooter">
+        </div>
+
+        <div class="contact">
+           <p class="copy" onclick="openFeedback()">ОБРАТНАЯ СВЯЗЬ</p>
+           <a href="moko-team@yandx.ru">moko-team@yandx.ru</a>
+           <a href="+7 (972)654-34-23">+7 (972)654-34-23</a>
+        </div>
+
+    </div>
+</footer>
+<div class="feedback-modal" id="feedbackModal">
+    <div class="feedback-content">
+        <h2>ОБРАТНАЯ СВЯЗЬ</h2>
+        <input type="text" placeholder="Ваше имя">
+        <input type="email" placeholder="Email">
+        <textarea placeholder="Ваше сообщение"></textarea>
+        <button class="send-btn" onclick="sendFeedback()">ОТПРАВИТЬ</button>
+    </div>
+</div>
+<script>
+function openFeedback() {
+    document.getElementById("feedbackModal").classList.add("active");
+}
+
+function sendFeedback() {
+    document.getElementById("feedbackModal").classList.remove("active");
+}
+
+document.getElementById("feedbackModal").addEventListener("click", function(e) {
+    if (e.target === this) {
+        this.classList.remove("active");
+    }
+});
+</script>
+</body>
+</html>
