@@ -37,6 +37,7 @@ body {
 }
 .main {
     padding: 0 58px 40px;
+    flex: 1;
 }
 .container {
     display: grid;
