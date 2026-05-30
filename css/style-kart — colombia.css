@@ -36,7 +36,7 @@ body {
     height: 35px;
 }
 .main {
-    padding: 0 58px 40px; 
+    padding: 40 58px 155px; 
 }
 .social {
     display: flex;
@@ -197,13 +197,13 @@ h1 {
     overflow-x: auto;
     scroll-behavior: smooth;
     scroll-snap-type: x mandatory;
-    padding: 10px 50px 20px; 
+    padding: 25px 50px 20px; 
     margin-top: 0;          
     align-items: flex-start;
 }
 .review {
     flex: 0 0 380px;
-    height: 200px;
+    height: 220px;
     background: #EBEBEB;
     border-radius: 20px;
     padding: 15px; 
