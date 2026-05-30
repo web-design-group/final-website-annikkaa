@@ -37,7 +37,7 @@ body {
     height: 35px;
 }
 .main {
-    padding: 40px 58px 180px;
+    padding: 40px 58px 160px;
   
 }
 .container {
@@ -212,7 +212,7 @@ h1 {
 }
 .review {
     flex: 0 0 380px;
-    height: 200px;
+    height: 220px;
     background: #EBEBEB;
     border-radius: 20px;
     padding: 15px; 
